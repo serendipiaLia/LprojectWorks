@@ -17,7 +17,7 @@ public class AplusB {
 	}
 }	
 
-	/* Another code..1
+	/* Another code
 	  public static void main(String args[]){ 
 	  	Scanner sc = new Scanner(System.in);
 			int a = sc.nextInt(); 
@@ -27,19 +27,5 @@ public class AplusB {
 			sc.close();
 			}
 	 */
-	/* Another code..2
-		public static void main(String args[]){
-	 		Scanner sc = new Scanner(System.in); 
-	 		
-	 		System.out.print("정수 A 입력 : ");
-	 		int a = scaaner.nextInt();
-	 		
-	 		System.out.print("정수 B 입력 : ");
-	 		int b = scaaner.nextInt();
-	 
-	 		int sum = a+b;
-	 		System.out.println("A+B =" + sum);
-	 		sc.close();
-			}
-	 */
+	
 
