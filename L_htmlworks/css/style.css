@@ -1,7 +1,9 @@
 /* index.html과 연결 */
-
-
 #a{background-color: aliceblue;}
 
 #b{background-color: antiquewhite;}
+
+.liststyle ul{display: flex;}
+.liststyle ul li{list-style: none;}
+
 
