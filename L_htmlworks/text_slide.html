@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text_slide test</title>
+    <link rel="stylesheet" href="css/text_slide.css">
+</head>
+<body>
+    <main id="main">
+        <div class="slider__wrap">
+            <div class="slider__text">
+                <div class="slider__inner">
+                    <div class="slider"><p>텍스트 1</p> </div>
+                    <div class="slider"><p>텍스트 2</p></div>
+                    <div class="slider"><p>텍스트 3</p></div>
+                    <div class="slider"><p>텍스트 4</p></div>
+                    <div class="slider"><p>텍스트 5</p></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 선택자
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderInner = sliderWrap.querySelector(".slider__inner"); // 움직이는 영역
+        const slider = sliderWrap.querySelectorAll(".slider"); // 개별 이미지
+    
+        let currentIndex = 0; // 현재 보이는 이미지
+        let sliderCount = slider.length; // 이미지 갯수
+        let sliderInterval = 3000; // 이미지 변경 간격 시간
+        let interval; // 슬라이드 인터벌을 저장할 변수
+    
+        sliderInner.style.transition = "all 0.3s";
+    
+        function startSlider() {
+            interval = setInterval(() => {
+                currentIndex = (currentIndex + 1) % sliderCount;
+    
+                sliderInner.style.transform = "translateY(" + -450 * currentIndex + "px)";
+            }, sliderInterval);
+        }
+    
+        function stopSlider() {
+            clearInterval(interval);
+        }
+    
+        // 마우스 hover 시 슬라이드 멈춤
+        sliderWrap.addEventListener("mouseover", stopSlider);
+    
+        // 마우스 hover 해제 시 슬라이드 재시작
+        sliderWrap.addEventListener("mouseout", startSlider);
+    
+        // 슬라이더 시작
+        startSlider();
+    </script>
+    
+</body>
+</html>
+

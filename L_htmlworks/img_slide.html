@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text_slide test</title>
+    <link rel="stylesheet" href="css/img_slide.css">
+</head>
+<body>
+    <main id="main">
+        <div class="slider__wrap">
+            <div class="slider__img">
+                <div class="slider__inner">
+                    <div class="slider"><img src="/images/cute.PNG" alt="이미지1"></div>
+                    <div class="slider"><img src="/images/flower.jpeg" alt="이미지2"></div>
+                    <div class="slider"><img src="/images/happy.jpeg" alt="이미지3"></div>
+                    <div class="slider"><img src="/images/perfect.PNG" alt="이미지4"></div>
+                    <div class="slider"><img src="/images/study.PNG" alt="이미지5"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 선택자
+        const sliderWrap = document.querySelector(".slider__wrap");
+        const sliderImg = sliderWrap.querySelector(".slider__img");             // 보여지는 영역
+        const sliderInner = sliderWrap.querySelector(".slider__inner");         // 움직이는 영역
+        const slider = sliderWrap.querySelectorAll(".slider");                  // 개별 이미지
+    
+        let currentIndex = 0;               // 현재 보이는 이미지
+        let sliderCount = slider.length;    // 이미지 갯수
+        let sliderInterval = 3000;          // 이미지 변경 간격 시간
+        
+        sliderInner.style.transition = "all 0.4s";
+    
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % sliderCount;
+    
+            sliderInner.style.transform = "translateY("+ -450 * currentIndex + "px)";
+        }, sliderInterval);
+    </script>
+</body>
+</html>
+
